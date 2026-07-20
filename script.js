@@ -41,7 +41,7 @@
    6. Copie a URL gerada (termina em /exec) e cole abaixo em SHEET_ENDPOINT.
    ---------------------------------------------------------------------- */
 
-const SHEET_ENDPOINT = ""; // TROCAR: cole a URL do Apps Script aqui (ex: "https://script.google.com/macros/s/XXXXX/exec")
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwte2fzj0YuGFG30PnTxDJqUQ67qH7yD62VKZSJBco7bpe4DpGTE3fy-hY5n-fWGTSaJQ/exec"; // TROCAR: cole a URL do Apps Script aqui (ex: "https://script.google.com/macros/s/XXXXX/exec")
 
 /* ----------------------------------------------------------------------
    1.b VÉU DE ABERTURA — abre como cortina revelando o convite
