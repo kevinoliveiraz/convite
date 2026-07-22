@@ -41,39 +41,10 @@
   <!-- ===================== APP SHELL ===================== -->
   <div class="app">
 
-    <!-- ===================== HEADER / MENU ===================== -->
+    <!-- ===================== HEADER ===================== -->
     <header class="header" id="topo">
       <a href="#topo" class="brand">Gleiciane Souza <span class="brand__heart">♥</span></a>
-
-      <!-- Nav horizontal: some no mobile, aparece a partir do desktop (≥880px) -->
-      <ul class="nav-desktop">
-        <li><a href="#detalhes">Data</a></li>
-        <li><a href="#local">Local</a></li>
-        <li><a href="#" data-action="dresscode">Dress Code</a></li>
-        <li><a href="#" data-action="presentes">Presentes</a></li>
-        <li><a href="#confirmacao">Confirmação</a></li>
-        <li><a href="#" data-action="mapa">Mapa</a></li>
-        <li><a href="#" data-action="contato">Contato</a></li>
-      </ul>
-
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Abrir menu">
-        <span class="menu-toggle__label">MENU</span>
-      </button>
     </header>
-
-    <!-- Painel de navegação (drawer) — usado no mobile e como fallback no desktop -->
-    <nav class="menu-panel" id="menuPanel" aria-hidden="true">
-      <ul class="menu-panel__list">
-        <li><a href="#detalhes" data-close>Data</a></li>
-        <li><a href="#local" data-close>Local</a></li>
-        <li><a href="#" data-action="dresscode" data-close>Dress Code</a></li>
-        <li><a href="#" data-action="presentes" data-close>Presentes</a></li>
-        <li><a href="#confirmacao" data-close>Confirmação</a></li>
-        <li><a href="#" data-action="mapa" data-close>Mapa</a></li>
-        <li><a href="#" data-action="contato" data-close>Contato</a></li>
-      </ul>
-    </nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- ===================== HERO ===================== -->
     <section class="hero" data-reveal>
@@ -109,7 +80,7 @@
           </svg>
           <span class="details__label">DATA</span>
           <span class="details__value">12.09.2026</span>
-          <span class="details__sub">QUARTA-FEIRA</span>
+          <span class="details__sub">SÁBADO</span>
         </div>
 
         <div class="details__divider" aria-hidden="true"></div>
@@ -164,12 +135,9 @@
     </section>
 
     <!--
-      As seções de Dress Code, Presentes, Mapa e Contato foram removidas
-      do scroll principal a pedido do cliente — elas serão implementadas
-      como funcionalidades separadas (ex: modais) usando os ganchos
-      data-action="dresscode" | "presentes" | "mapa" | "contato" já
-      presentes nos links do menu (ver header e menu-panel acima, e a
-      função handleSectionAction() em script.js).
+      Dress Code, Presentes, Mapa e Contato não fazem parte deste convite
+      (sem menu de navegação) — se um dia quiser incluí-los, dá pra
+      adicionar seções aqui ou como um modal separado.
     -->
 
     <!-- ===================== CONFIRMAÇÃO ===================== -->
@@ -225,7 +193,8 @@
             <option value="0">Vou sozinho(a)</option>
             <option value="1">+1 acompanhante</option>
             <option value="2">+2 acompanhantes</option>
-
+            <option value="3">+3 acompanhantes</option>
+            <option value="4">+4 acompanhantes</option>
           </select>
         </label>
 
