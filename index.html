@@ -58,9 +58,6 @@
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Abrir menu">
         <span class="menu-toggle__label">MENU</span>
-        <span class="menu-toggle__icon">
-          <span></span><span></span><span></span>
-        </span>
       </button>
     </header>
 
@@ -111,8 +108,8 @@
             <circle cx="12" cy="16.5" r="0.9" fill="currentColor"/>
           </svg>
           <span class="details__label">DATA</span>
-          <span class="details__value">TROCAR: 19.09.2026</span>
-          <span class="details__sub">TROCAR: SÁBADO</span>
+          <span class="details__value">12.09.2026</span>
+          <span class="details__sub">QUARTA-FEIRA</span>
         </div>
 
         <div class="details__divider" aria-hidden="true"></div>
@@ -123,21 +120,37 @@
             <path d="M12 7.5V12L15 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="details__label">HORÁRIO</span>
-          <span class="details__value">TROCAR: 19:00</span>
-          <span class="details__sub">TROCAR: ATÉ 01:00</span>
+          <span class="details__value">19h</span>
         </div>
 
         <div class="details__divider" aria-hidden="true"></div>
 
-        <div class="details__item" id="local">
-          <svg class="details__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-            <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
+        <!--
+          Local: o item inteiro é um link que abre o endereço no Google Maps
+          em uma nova aba. O ícone ganha um "selo" circular sutil (borda +
+          brilho + setinha no canto) para sinalizar que é uma ação clicável,
+          mantendo a mesma estética discreta do resto do card.
+        -->
+        <a
+          class="details__item details__item--link"
+          id="local"
+          href="https://www.google.com/maps/search/?api=1&query=Rua+Catl%C3%A9ia%2C+07+-+Uni%C3%A3o+de+Vila+Nova%2C+S%C3%A3o+Paulo+-+SP%2C+08071-100"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir localização no Google Maps"
+          title="Abrir no Google Maps"
+        >
+          <span class="details__icon-wrap">
+            <svg class="details__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span class="details__icon-badge" aria-hidden="true">↗</span>
+          </span>
           <span class="details__label">LOCAL</span>
-          <span class="details__value details__value--place">TROCAR: Espaço Villa</span>
-          <span class="details__sub">TROCAR: Rua das Flores, 123<br />São Paulo - SP</span>
-        </div>
+          <span class="details__value details__value--place">Rua Catléia, 07</span>
+          <span class="details__sub">União de Vila Nova<br />São Paulo - SP · 08071-100</span>
+        </a>
 
       </div>
     </section>
@@ -212,8 +225,7 @@
             <option value="0">Vou sozinho(a)</option>
             <option value="1">+1 acompanhante</option>
             <option value="2">+2 acompanhantes</option>
-            <option value="3">+3 acompanhantes</option>
-            <option value="4">+4 acompanhantes</option>
+
           </select>
         </label>
 
