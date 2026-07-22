@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Gleiciane Souza | 20 Anos</title>
+  <meta name="description" content="Convite especial para a celebração de 20 anos de Gleiciane Souza." />
+
+  <!-- Fontes: Serif elegante (títulos) + Cursiva refinada (detalhes) + Sans-serif moderna (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== VÉU DE ABERTURA ===================== -->
+  <!-- Cortina de entrada: duas metades que se abrem revelando o convite -->
+  <div class="veil" id="veil" aria-hidden="true">
+    <div class="veil__panel veil__panel--left"></div>
+    <div class="veil__panel veil__panel--right"></div>
+    <div class="veil__mark">
+      <span class="veil__line"></span>
+      <span class="veil__initial"></span>
+      <span class="veil__line"></span>
+    </div>
+  </div>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <!-- Fundo premium 100% Canvas: poeira dourada + nebulosas suaves + ondas de luz -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Ambientação de desktop: tipografia fantasma nas laterais, oculta no mobile -->
+  <div class="bg-side bg-side--left" aria-hidden="true">TROCAR: GLEICIANE SOUZA</div>
+  <div class="bg-side bg-side--right" aria-hidden="true">VINTE ANOS</div>
+
+  <!-- ===================== APP SHELL ===================== -->
+  <div class="app">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header" id="topo">
+      <a href="#topo" class="brand">Gleiciane Souza <span class="brand__heart">♥</span></a>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" data-reveal>
+      <p class="eyebrow" data-reveal>CONVITE ESPECIAL</p>
+
+      <div class="hero__number" data-reveal>
+        <span class="hero__digits">20</span>
+        <span class="hero__script">Anos</span>
+      </div>
+
+      <p class="hero__heart" aria-hidden="true">♥</p>
+
+      <p class="hero__tagline" data-reveal>
+        VEM COMEMORAR<br />COMIGO!
+      </p>
+    </section>
+
+    <!-- ===================== CARD DE DETALHES ===================== -->
+    <section class="details" id="detalhes" data-reveal>
+      <div class="details__card">
+
+        <div class="details__item">
+          <svg class="details__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M3.5 9.5H20.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M8 3V6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M16 3V6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="8" cy="13" r="0.9" fill="currentColor"/>
+            <circle cx="12" cy="13" r="0.9" fill="currentColor"/>
+            <circle cx="16" cy="13" r="0.9" fill="currentColor"/>
+            <circle cx="8" cy="16.5" r="0.9" fill="currentColor"/>
+            <circle cx="12" cy="16.5" r="0.9" fill="currentColor"/>
+          </svg>
+          <span class="details__label">DATA</span>
+          <span class="details__value">12.09.2026</span>
+          <span class="details__sub">SÁBADO</span>
+        </div>
+
+        <div class="details__divider" aria-hidden="true"></div>
+
+        <div class="details__item">
+          <svg class="details__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M12 7.5V12L15 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="details__label">HORÁRIO</span>
+          <span class="details__value">19h</span>
+        </div>
+
+        <div class="details__divider" aria-hidden="true"></div>
+
+        <!--
+          Local: o item inteiro é um link que abre o endereço no Google Maps
+          em uma nova aba. O ícone ganha um "selo" circular sutil (borda +
+          brilho + setinha no canto) para sinalizar que é uma ação clicável,
+          mantendo a mesma estética discreta do resto do card.
+        -->
+        <a
+          class="details__item details__item--link"
+          id="local"
+          href="https://www.google.com/maps/search/?api=1&query=Rua+Catl%C3%A9ia%2C+07+-+Uni%C3%A3o+de+Vila+Nova%2C+S%C3%A3o+Paulo+-+SP%2C+08071-100"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir localização no Google Maps"
+          title="Abrir no Google Maps"
+        >
+          <span class="details__icon-wrap">
+            <svg class="details__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span class="details__icon-badge" aria-hidden="true">↗</span>
+          </span>
+          <span class="details__label">LOCAL</span>
+          <span class="details__value details__value--place">Rua Catléia, 07</span>
+          <span class="details__sub">União de Vila Nova<br />São Paulo - SP · 08071-100</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===================== MENSAGEM ===================== -->
+    <section class="message" data-reveal>
+      <p class="message__script">Conto com você! <span aria-hidden="true">♥</span></p>
+      <p class="message__body">
+        SUA PRESENÇA TORNA TUDO<br />AINDA MAIS ESPECIAL.
+      </p>
+    </section>
+
+    <!--
+      Dress Code, Presentes, Mapa e Contato não fazem parte deste convite
+      (sem menu de navegação) — se um dia quiser incluí-los, dá pra
+      adicionar seções aqui ou como um modal separado.
+    -->
+
+    <!-- ===================== CONFIRMAÇÃO ===================== -->
+    <section class="rsvp" id="confirmacao" data-reveal>
+      <div class="rsvp__card">
+        <h2 class="rsvp__title">Confirme sua presença</h2>
+        <p class="rsvp__text">Sua confirmação é muito importante para mim!</p>
+
+        <button class="btn-primary" id="openModalBtn" type="button">
+          <span class="btn-primary__heart" aria-hidden="true">♡</span>
+          CONFIRMAR PRESENÇA
+        </button>
+
+        <p class="rsvp__note">
+          Ao confirmar, você também pode informar<br />quantos acompanhantes irá levar.
+        </p>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">⌄</div>
+    </section>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="footer" data-reveal>
+      <p class="footer__text">ESPERO POR VOCÊ!</p>
+      <p class="footer__heart" aria-hidden="true">♥</p>
+    </footer>
+
+  </div>
+
+  <!-- ===================== MODAL DE CONFIRMAÇÃO ===================== -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">✕</button>
+
+      <!-- Estado 1: formulário -->
+      <form class="modal__form" id="rsvpForm">
+        <h3 id="modalTitle" class="modal__title">Confirmar presença</h3>
+        <p class="modal__subtitle">Preencha seus dados abaixo</p>
+
+        <label class="field">
+          <span class="field__label">Nome completo</span>
+          <input class="field__input" type="text" name="nome" id="nome" required autocomplete="name" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Telefone</span>
+          <input class="field__input" type="tel" name="telefone" id="telefone" required autocomplete="tel" placeholder="(11) 90000-0000" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Acompanhantes</span>
+          <select class="field__input field__input--select" name="acompanhantes" id="acompanhantes">
+            <option value="0">Vou sozinho(a)</option>
+            <option value="1">+1 acompanhante</option>
+            <option value="2">+2 acompanhantes</option>
+            <option value="3">+3 acompanhantes</option>
+            <option value="4">+4 acompanhantes</option>
+          </select>
+        </label>
+
+        <button class="btn-primary btn-primary--full" type="submit" id="submitBtn">
+          <span class="btn-primary__spinner" id="submitSpinner" aria-hidden="true"></span>
+          <span id="submitLabel">CONFIRMAR</span>
+        </button>
+
+        <p class="modal__error" id="modalError" role="alert"></p>
+      </form>
+
+      <!-- Estado 2: sucesso -->
+      <div class="modal__success" id="modalSuccess" aria-hidden="true">
+        <div class="modal__success-check">
+          <svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle class="modal__success-circle" cx="26" cy="26" r="24" fill="none"/>
+            <path class="modal__success-path" fill="none" d="M14 27l7 7 17-17"/>
+          </svg>
+        </div>
+        <h3 class="modal__title">Presença confirmada</h3>
+        <p class="modal__subtitle">Obrigada por fazer parte deste momento. ♥</p>
+        <button class="btn-secondary" id="modalDone" type="button">FECHAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
