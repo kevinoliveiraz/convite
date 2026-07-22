@@ -282,37 +282,43 @@ body.veil-lock {
 }
 
 .menu-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
   color: var(--ivory-dim);
   font-size: 0.72rem;
-  letter-spacing: 2px;
-  padding: 6px;
+  letter-spacing: 2.5px;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.menu-toggle__icon {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 20px;
-}
-
-.menu-toggle__icon span {
-  display: block;
+/* Sublinhado fino sempre discretamente visível — sinaliza que é clicável
+   mesmo sem hover, e se intensifica ao interagir/abrir */
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
   height: 1px;
-  background: var(--gold);
-  transition: transform 0.4s var(--ease-luxury), opacity 0.3s ease;
+  background: var(--gold-soft);
+  opacity: 0.3;
+  transform: scaleX(0.55);
+  transform-origin: center;
+  transition: opacity 0.3s ease, transform 0.4s var(--ease-luxury);
 }
 
-.menu-toggle[aria-expanded="true"] .menu-toggle__icon span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
+.menu-toggle:hover,
+.menu-toggle:focus-visible,
+.menu-toggle[aria-expanded="true"] {
+  color: var(--gold-soft);
 }
-.menu-toggle[aria-expanded="true"] .menu-toggle__icon span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle[aria-expanded="true"] .menu-toggle__icon span:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
+
+.menu-toggle:hover::after,
+.menu-toggle:focus-visible::after,
+.menu-toggle[aria-expanded="true"]::after {
+  opacity: 0.9;
+  transform: scaleX(1);
 }
 
 .menu-panel {
@@ -494,6 +500,78 @@ body.veil-lock {
   margin-bottom: 10px;
 }
 
+/* --- Selo circular do ícone de Local: sinaliza que é uma ação clicável --- */
+.details__icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-soft);
+  margin-bottom: 10px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s var(--ease-luxury);
+}
+
+.details__icon-wrap .details__icon {
+  width: 19px;
+  height: 19px;
+  margin-bottom: 0;
+}
+
+/* Setinha discreta no canto do círculo — indica "abre em outro lugar" */
+.details__icon-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 1px solid var(--hairline);
+  color: var(--gold-soft);
+  font-size: 0.55rem;
+  line-height: 13px;
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+/* O card inteiro de Local é um <a> — remove estilos padrão de link e
+   adiciona um leve "levante" + brilho no ícone ao passar o mouse/focar */
+.details__item--link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s var(--ease-luxury);
+}
+
+.details__item--link:hover,
+.details__item--link:focus-visible {
+  transform: translateY(-2px);
+}
+
+.details__item--link:hover .details__icon-wrap,
+.details__item--link:focus-visible .details__icon-wrap {
+  border-color: var(--gold);
+  box-shadow: 0 0 16px rgba(201, 162, 77, 0.35);
+  transform: scale(1.06);
+}
+
+.details__item--link:hover .details__icon-badge,
+.details__item--link:focus-visible .details__icon-badge {
+  opacity: 1;
+  background: var(--gold);
+  color: #241a0f;
+  transform: scale(1.08);
+}
+
+.details__item--link:hover .details__value--place,
+.details__item--link:focus-visible .details__value--place {
+  color: var(--gold-soft);
+}
+
 .details__label {
   font-size: 0.62rem;
   letter-spacing: 2.5px;
@@ -507,6 +585,7 @@ body.veil-lock {
   color: var(--ivory);
   font-weight: 500;
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 .details__value--place {
@@ -1001,12 +1080,8 @@ body.veil-lock {
     transform: scaleX(1);
   }
 
+  /* No desktop a nav horizontal já cobre tudo; o botão MENU vira redundante */
   .menu-toggle {
-    justify-self: end;
-  }
-
-  /* No desktop o hambúrguer some do texto, fica só o ícone (como na referência) */
-  .menu-toggle__label {
     display: none;
   }
 
@@ -1058,6 +1133,25 @@ body.veil-lock {
     width: 26px;
     height: 26px;
     margin-bottom: 14px;
+  }
+
+  .details__icon-wrap {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
+
+  .details__icon-wrap .details__icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 0;
+  }
+
+  .details__icon-badge {
+    width: 17px;
+    height: 17px;
+    font-size: 0.6rem;
+    line-height: 15px;
   }
 
   .details__label {
